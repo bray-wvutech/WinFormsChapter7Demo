@@ -37,6 +37,7 @@ partial class MainForm
         blueRadioButton = new RadioButton();
         radioButton1 = new RadioButton();
         carPictureBox = new PictureBox();
+        noneRadioButton = new RadioButton();
         colorGroupBox.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)carPictureBox).BeginInit();
         SuspendLayout();
@@ -53,13 +54,14 @@ partial class MainForm
         // 
         // colorGroupBox
         // 
+        colorGroupBox.Controls.Add(noneRadioButton);
         colorGroupBox.Controls.Add(redRadioButton);
         colorGroupBox.Controls.Add(radioButton2);
         colorGroupBox.Controls.Add(blueRadioButton);
         colorGroupBox.Controls.Add(radioButton1);
         colorGroupBox.Location = new Point(12, 12);
         colorGroupBox.Name = "colorGroupBox";
-        colorGroupBox.Size = new Size(107, 182);
+        colorGroupBox.Size = new Size(107, 196);
         colorGroupBox.TabIndex = 0;
         colorGroupBox.TabStop = false;
         colorGroupBox.Text = "&Color";
@@ -120,6 +122,18 @@ partial class MainForm
         carPictureBox.TabIndex = 1;
         carPictureBox.TabStop = false;
         // 
+        // noneRadioButton
+        // 
+        noneRadioButton.AutoSize = true;
+        noneRadioButton.Location = new Point(15, 155);
+        noneRadioButton.Name = "noneRadioButton";
+        noneRadioButton.Size = new Size(66, 24);
+        noneRadioButton.TabIndex = 4;
+        noneRadioButton.TabStop = true;
+        noneRadioButton.Text = "None";
+        noneRadioButton.UseVisualStyleBackColor = true;
+        noneRadioButton.CheckedChanged += noneRadioButton_CheckedChanged;
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
@@ -145,4 +159,5 @@ partial class MainForm
     private RadioButton radioButton2;
     private RadioButton redRadioButton;
     private PictureBox carPictureBox;
+    private RadioButton noneRadioButton;
 }

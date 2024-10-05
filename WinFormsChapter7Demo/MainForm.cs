@@ -1,3 +1,5 @@
+using System.Collections.ObjectModel;
+
 namespace WinFormsChapter7Demo;
 
 public partial class MainForm : Form
@@ -14,7 +16,12 @@ public partial class MainForm : Form
 
     private void blueRadioButton_CheckedChanged(object sender, EventArgs e)
     {
-        carPictureBox.Image = carImageList.Images[1];
+        // lets access this one by key name instead of index
+        string? key = carImageList.Images.Keys[1];
+        if (!string.IsNullOrEmpty(key))
+        {
+            carPictureBox.Image = carImageList.Images[key];
+        }
     }
 
     private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -29,5 +36,10 @@ public partial class MainForm : Form
 
     private void MainForm_Load(object sender, EventArgs e)
     {
+    }
+
+    private void noneRadioButton_CheckedChanged(object sender, EventArgs e)
+    {
+        carPictureBox.Image = null;
     }
 }
